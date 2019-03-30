@@ -1,6 +1,4 @@
-import kramed from 'kramed'
 import pkg from './package'
-const renderer = new kramed.Renderer()
 
 export default {
   mode: 'spa',
@@ -67,17 +65,7 @@ export default {
         config.module.rules.push({
           test: /\.md$/,
           exclude: /(node_modules)/,
-          use: [
-            {
-              loader: 'html-loader'
-            },
-            {
-              loader: 'markdown-loader',
-              options: {
-                renderer
-              }
-            }
-          ]
+          use: 'raw-loader'
         })
       }
     }

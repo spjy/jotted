@@ -1,5 +1,26 @@
 <template>
   <div>
+    <a-menu v-model="current" mode="horizontal">
+      <a-menu-item key="mail">
+        <a-icon type="home" /> Homework Help
+      </a-menu-item>
+      <a-menu-item key="app">
+        <a
+          href="https://discord.gg/YudDZtb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <a-icon type="book" /> Discord Invite
+        </a>
+      </a-menu-item>
+      <a-menu-item key="app" disabled>
+        <a-icon type="book" /> Guides
+      </a-menu-item>
+      <a-menu-item key="app" disabled>
+        <a-icon type="code-o" /> Dashboard
+      </a-menu-item>
+    </a-menu>
+
     <nuxt />
   </div>
 </template>

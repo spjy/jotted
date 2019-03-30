@@ -1,36 +1,88 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        jotted
+  <div>
+    <div class="header-lg header-sm text-center text-white">
+      <img src="/logo.png" />
+      <h1 class="title text-white">
+        Homework Help
       </h1>
-      <h2 class="subtitle">
-        A note repository.
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
+      <p class="subtitle">
+        A Discord server to help people with their math, science, social
+        studies, English, computer science, art, or language homework.
+      </p>
     </div>
-  </section>
+
+    <br />
+
+    <a-row :gutter="0" type="flex" justify="center">
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Question" :bordered="false">
+          Ask questions about homework topics you don't understand.
+        </a-card>
+      </a-col>
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Answer" :bordered="false">
+          Answer questions to help out others in subjects you're an expert in.
+        </a-card>
+      </a-col>
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Collaborate" :bordered="false">
+          Talk to other members to work out difficult problems.
+        </a-card>
+      </a-col>
+    </a-row>
+
+    <br />
+
+    <div class="off-card text-center p-10">
+      <h2 class="text-white">Interested in joining? Look no further.</h2>
+
+      <a
+        href="https://discord.gg/YudDZtb"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <a-button type="primary" icon="link" size="large">
+          Join the Discord
+        </a-button>
+      </a>
+    </div>
+
+    <br />
+
+    <a-row :gutter="0" type="flex" justify="center">
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Challenge" :bordered="false">
+          Apply your knowledge in math and science to solve
+          <span className="channel-format"> #challenges</span>.
+        </a-card>
+      </a-col>
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Defend" :bordered="false">
+          Defend your opinion on controversial topics each week in
+          <span className="channel-format"> #debates</span>.
+        </a-card>
+      </a-col>
+      <a-col class="gutter-row" :sm="24" :md="24" :lg="4">
+        <a-card title="Create" :bordered="false">
+          Show off your creative side and create pieces of art in
+          <span className="channel-format"> #creativity</span>.
+        </a-card>
+      </a-col>
+    </a-row>
+
+    <br />
+
+    <div class="off-card text-white text-center p-3">
+      Copyright &copy; 2019 Homework Help. Vector Art by
+      <a href="https://www.vecteezy.com"> Vecteezy.</a>
+    </div>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import '@/assets/css/app.css'
 
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 
 <style>
@@ -52,21 +104,23 @@ export default {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-weight: 400;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
   padding-bottom: 15px;
+  font-size: 1rem;
 }
 
 .links {
   padding-top: 15px;
+}
+
+.channel-format {
+  color: #667ec9;
+  background-color: #f3f3f3;
 }
 </style>
