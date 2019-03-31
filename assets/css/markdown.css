@@ -1,0 +1,38 @@
+h1 {
+  border-bottom: 1px solid #dbd8e9;
+}
+
+.katex-display:before {
+  display: block;
+  content: "MATH";
+  margin-bottom: 1em;
+  border-bottom: 1px solid #eeeeee;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #2C97C7;
+}
+
+.katex-display {
+  border-radius: 5px;
+  text-align: left;
+  padding: 1em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fafafa;
+}
+
+pre:before {
+  display: block;
+  content: "CODE";
+  margin-bottom: 1em;
+  border-bottom: 1px solid #eeeeee;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #2C97C7;
+}
+
+pre {
+  padding: 1em;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fafafa;
+  font-family: 'Consolas', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}

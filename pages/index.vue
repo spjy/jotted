@@ -1,15 +1,10 @@
 <template>
   <div>
-    <div class="header-lg header-sm text-center text-white">
-      <img src="/logo.png" />
-      <h1 class="title text-white">
-        Homework Help
-      </h1>
-      <p class="subtitle">
-        A Discord server to help people with their math, science, social
-        studies, English, computer science, art, or language homework.
-      </p>
-    </div>
+    <Header
+      header="Homework Help"
+      description="A Discord server to help people with their math, science, social
+      studies, English, computer science, art, or language homework."
+    />
 
     <br />
 
@@ -80,9 +75,14 @@
 </template>
 
 <script>
+import Header from '~/components/Header'
 import '@/assets/css/app.css'
 
-export default {}
+export default {
+  components: {
+    Header
+  }
+}
 </script>
 
 <style>

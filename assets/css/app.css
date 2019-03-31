@@ -1,20 +1,3 @@
-@media only screen and (min-width: 1360px) {
-  .header-lg {
-    background-image: url('/background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    padding: 6em;
-  }
-}
-
-@media only screen and (max-width: 1359px) {
-  .header-sm {
-    background-color: #303030;
-    padding: 6em;
-  }
-}
-
 .off-card {
   background-color: #303030;
 }
