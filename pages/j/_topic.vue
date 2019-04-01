@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header header="Calculus" description="Limits" />
+    <Header
+      :header="frontmatter.header"
+      :description="frontmatter.description"
+    />
     <div class="bg-blue-lightest">
       <!-- <div class="p-3 flex justify-center">
         <a-card class="w-64 text-center">
@@ -8,18 +11,18 @@
           <li>Test</li>
         </a-card>
       </div> -->
-      <div class="flex h-full">
-        <div class="w-2/5 mx-auto p-4">
+      <div class="sm:block md:flex lg:flex xl:flex">
+        <div class="sm:w-full md:w-1/5 lg:w-1/5 xl:w-1/5 mx-auto p-4">
           <a-card class="text-center">
             <h3>Table of Contents</h3>
-            <li>Test</li>
+            <div v-html="toc"></div>
           </a-card>
-          <br />
+          <!-- <br />
           <a-card>
             <h1>Calculators</h1>
-          </a-card>
+          </a-card> -->
         </div>
-        <div class="w-3/5">
+        <div class="sm:w-full md:w-4/5 lg:w-4/5 xl:w-4/5">
           <div class="mx-auto p-4">
             <a-card>
               <div class="font" v-html="markdown"></div>
@@ -32,12 +35,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import Header from '~/components/Header'
-import katex from 'katex'
-import Mdi from 'markdown-it'
-import mdia from 'markdown-it-attrs'
-import mditm from 'markdown-it-texmath'
-import mdih from 'markdown-it-highlight'
 import '@/assets/css/katex.min.css'
 import '@/assets/css/app.css'
 import '@/assets/css/markdown.css'
@@ -50,23 +49,19 @@ export default {
   async asyncData({ params }) {
     const markdown = await import(`~/static/topics/${params.topic}.md`)
 
-    mditm.use(katex)
-
-    const render = Mdi()
-      .use(mdia)
-      .use(mditm, {
-        delimiters: 'dollars',
-        macros: { '\\RR': '\\mathbb{R}' }
-      })
-      .use(mdih)
+    const { output, frontmatter, toc } = Vue.prototype.$markdown(
+      markdown.default
+    )
 
     return {
-      markdown: render.render(markdown.default)
+      markdown: output,
+      frontmatter,
+      toc
     }
   },
   mounted() {
     // eslint-disable-next-line
-    console.log(this.markdown)
+    console.log(this.toc)
   }
 }
 </script>

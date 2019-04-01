@@ -29,7 +29,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/antd-ui', '@/plugins/kramed.js'],
+  plugins: ['@/plugins/antd-ui', '@/plugins/markdown.js'],
 
   /*
    ** Nuxt.js modules

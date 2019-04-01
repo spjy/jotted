@@ -2,7 +2,7 @@
   <div>
     <a-menu v-model="current" mode="horizontal">
       <a-menu-item key="home">
-        <a-icon type="home" /> Homework Help
+        <a href="/"><a-icon type="home" /> Homework Help</a>
       </a-menu-item>
       <a-menu-item key="invite">
         <a

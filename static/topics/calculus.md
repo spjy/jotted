@@ -1,3 +1,8 @@
+---
+header: Calculus
+description: The study of limits.
+---
+
 # Brief
 
 Calculus is the study of limits.
@@ -26,9 +31,7 @@ $$\int_a^b sinx dx$$
 ```javascript
 const i = 0;
 
-const ok = () => {
-  console.log('test')
-}
+const ok = () => 'hello' => 'hello' => 'world' => 'very' => 'long' => 'chain'
 ```
 
 ```cpp
