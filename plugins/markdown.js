@@ -7,11 +7,13 @@ import mdih from 'markdown-it-highlight'
 import mdifm from 'markdown-it-front-matter'
 import mditocaa from 'markdown-it-toc-and-anchor'
 
-Vue.prototype.$markdown = markdown => {
-  mditm.use(katex)
+function markdownIt(markdown) {
+  const output = {
+    frontmatter: {},
+    toc: {}
+  }
 
-  const frontmatter = {}
-  let toc
+  mditm.use(katex)
 
   const mdi = Mdi()
     .use(mdia)
@@ -21,24 +23,25 @@ Vue.prototype.$markdown = markdown => {
     })
     .use(mdih)
     .use(mdifm, fm => {
-      // eslint-disable-next-line
       fm.split('\n').forEach(kv => {
         const value = kv.split(': ')
 
-        frontmatter[value[0]] = value[1]
+        output.frontmatter[value[0]] = value[1]
       })
     })
     .use(mditocaa, {
       tocCallback: (markdown, array, html) => {
+        output.toc = array
         // eslint-disable-next-line
-        console.log(html)
-        toc = html
+        console.log(array)
       }
     })
 
-  return {
-    frontmatter,
-    toc,
-    output: mdi.render(markdown)
-  }
+  output.output = mdi.render(markdown)
+
+  return output
+}
+
+Vue.prototype.$markdown = markdown => {
+  return markdownIt(markdown)
 }

@@ -19,6 +19,7 @@ h4 {
 section {
   display: inline-block;
   margin: 0 auto;
+  padding: 5px;
 }
 
 .katex-display:before {
@@ -58,7 +59,15 @@ pre {
   font-family: 'Consolas', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-.header-anchor {
+.markdownIt-Anchor {
   color: #667ec9;
   padding: 1px;
+}
+
+.markdownIt-Anchor:hover {
+  text-decoration: underline;
+}
+
+.ant-anchor-wrapper {
+  padding: 1rem;
 }
