@@ -16,23 +16,15 @@
           <a-anchor
             class="sm:invisible md:visible lg: visible xl:visible"
             :offsetTop="30"
+            :offsetBottom="30"
           >
             <a-anchor-link
               v-for="content in toc"
               :href="`#${content.anchor}`"
-              :title="content.content"
               :key="content.anchor"
+              :title="content.content"
               :style="`text-indent: ${0.6 * (content.level - 1)}em`"
             />
-            <!-- <a-anchor-link
-              href="#components-anchor-demo-static-anchor"
-              title="Fixed demo"
-            />
-            <a-anchor-link href="#API" title="API">
-              <a-anchor-link href="#Anchor-Props" title="Anchor Props" />
-              <a-anchor-link href="#Link-Props" title="Link Props" />
-            </a-anchor-link> -->
-            <!-- <div v-html="toc"></div> -->
           </a-anchor>
           <!-- <br />
           <a-card>

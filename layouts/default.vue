@@ -2,7 +2,7 @@
   <div>
     <a-menu v-model="current" mode="horizontal">
       <a-menu-item key="home">
-        <a href="/"><a-icon type="home" /> Homework Help</a>
+        <nuxt-link to="/"><a-icon type="home" /> Homework Help</nuxt-link>
       </a-menu-item>
       <a-menu-item key="invite">
         <a
@@ -13,8 +13,11 @@
           <a-icon type="book" /> Discord Invite
         </a>
       </a-menu-item>
-      <a-menu-item key="guides" disabled>
-        <a-icon type="book" /> Guides
+      <a-menu-item key="guides">
+        <nuxt-link to="/guides">
+          <a-icon type="book" />
+          Guides
+        </nuxt-link>
       </a-menu-item>
     </a-menu>
 

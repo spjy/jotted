@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="header-lg header-sm text-center text-white">
-      <img src="/logo.png" alt="Homework Help Logo" style="width: 7em" />
+      <img
+        src="/logo.png"
+        alt="Homework Help Logo"
+        style="width: 7em; background-color: transparent;"
+      />
       <h1 class="text-white border-0">
         {{ header }}
       </h1>
@@ -30,7 +34,7 @@ export default {
 </script>
 
 <style>
-@media only screen and (min-width: 1360px) {
+@media only screen and (min-width: 500px) {
   .header-lg {
     background-image: url('/background.svg');
     background-repeat: no-repeat;
