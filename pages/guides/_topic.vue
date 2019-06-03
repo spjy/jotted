@@ -56,7 +56,7 @@ export default {
     Header
   },
   async asyncData({ params }) {
-    const markdown = await import(`~/static/topics/${params.topic}.md`)
+    const markdown = await import(`~/static/jotted-topics/${params.topic}.md`)
 
     const { output, frontmatter, toc } = Vue.prototype.$markdown(
       markdown.default
