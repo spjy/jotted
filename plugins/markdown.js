@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import katex from 'katex'
-import Mdi from 'markdown-it'
-import mdia from 'markdown-it-attrs'
-import mditm from 'markdown-it-texmath'
-import mdih from 'markdown-it-highlight'
-import mdifm from 'markdown-it-front-matter'
-import mditocaa from 'markdown-it-toc-and-anchor'
+import mdIt from 'markdown-it'
+import mdAttributes from 'markdown-it-attrs'
+import mdTexMath from 'markdown-it-texmath'
+import mdHighlight from 'markdown-it-highlight'
+import mdFrontMatter from 'markdown-it-front-matter'
+import mdTableOfContentsAndAnchor from 'markdown-it-toc-and-anchor'
 
 function markdownIt(markdown) {
   const output = {
@@ -13,23 +13,23 @@ function markdownIt(markdown) {
     toc: {}
   }
 
-  mditm.use(katex)
+  mdAttributes.use(katex)
 
-  const mdi = Mdi()
-    .use(mdia)
-    .use(mditm, {
+  const markdownIt = mdIt()
+    .use(mdAttributes)
+    .use(mdTexMath, {
       delimiters: 'dollars',
       macros: { '\\RR': '\\mathbb{R}' }
     })
-    .use(mdih)
-    .use(mdifm, fm => {
+    .use(mdHighlight)
+    .use(mdFrontMatter, fm => {
       fm.split('\n').forEach(kv => {
         const value = kv.split(': ')
 
         output.frontmatter[value[0]] = value[1]
       })
     })
-    .use(mditocaa, {
+    .use(mdTableOfContentsAndAnchor, {
       tocCallback: (markdown, array, html) => {
         output.toc = array
         // eslint-disable-next-line
@@ -37,7 +37,7 @@ function markdownIt(markdown) {
       }
     })
 
-  output.output = mdi.render(markdown)
+  output.output = markdownIt.render(markdown)
 
   return output
 }

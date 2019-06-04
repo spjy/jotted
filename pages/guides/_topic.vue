@@ -5,12 +5,6 @@
       :description="frontmatter ? frontmatter.description : ''"
     />
     <div class="bg-blue-lightest">
-      <!-- <div class="p-3 flex justify-center">
-        <a-card class="w-64 text-center">
-          <h3>Table of Contents</h3>
-          <li>Test</li>
-        </a-card>
-      </div> -->
       <div class="sm:block md:flex lg:flex xl:flex">
         <div class="sm:w-full md:w-1/5 lg:w-1/5 xl:w-1/5 mx-auto p-4">
           <a-anchor
@@ -55,6 +49,7 @@ export default {
   components: {
     Header
   },
+  //** Import markdown files asyncronously for rendering */
   async asyncData({ params }) {
     const markdown = await import(`~/static/jotted-topics/${params.topic}.md`)
 
@@ -67,10 +62,6 @@ export default {
       frontmatter,
       toc
     }
-  },
-  mounted() {
-    // eslint-disable-next-line
-    console.log(this.toc)
   }
 }
 </script>
