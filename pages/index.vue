@@ -29,7 +29,9 @@
     <br />
 
     <div class="off-card text-center p-10">
-      <h2 class="text-white">Interested in joining? Look no further.</h2>
+      <h2 class="text-white border-none">
+        Interested in joining? Look no further.
+      </h2>
 
       <a
         href="https://discord.gg/YudDZtb"
@@ -85,7 +87,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;

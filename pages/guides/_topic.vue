@@ -49,7 +49,7 @@ export default {
   components: {
     Header
   },
-  //** Import markdown files asyncronously for rendering */
+  /** Import markdown files asyncronously for rendering */
   async asyncData({ params }) {
     const markdown = await import(`~/static/jotted-topics/${params.topic}.md`)
 

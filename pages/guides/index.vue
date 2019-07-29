@@ -7,13 +7,11 @@
     <div class="flex p-4 flex-wrap">
       <nuxt-link
         v-for="topic in topics"
-        :key="topic.title"
-        :to="`/guides/${topic.url}`"
+        :key="topic"
+        :to="`/guides/${topic}`"
         class="flex-1 p-2"
       >
-        <a-card hoverable :title="topic.title">
-          {{ topic.description }}
-        </a-card>
+        <a-card hoverable :title="topic.toUpperCase()" />
       </nuxt-link>
     </div>
   </div>
@@ -28,30 +26,24 @@ export default {
   },
   data() {
     return {
-      topics: [
-        {
-          title: 'Calculus',
-          url: 'calculus',
-          description: 'The study of limits.'
-        },
-        {
-          title: 'Fourier Series',
-          url: 'fourier',
-          description:
-            'Manipulation of sinusoids for expansion of periodic functions.'
-        },
-        {
-          title: 'Linear Algebra',
-          url: 'linear',
-          description: 'The study of linear equations.'
-        },
-        {
-          title: 'Microelectronics',
-          url: 'microelectronics',
-          description: 'The study of small eletrical components.'
-        }
-      ]
+      topics: []
     }
+  },
+  methods: {
+    /**
+     * Processes the imported file strings and extracts the name.
+     * @param {String[]} files The files within a certain directory.
+     */
+    importAll(files) {
+      files.keys().forEach(file => {
+        this.topics.push(file.match(/\/(.*?)\./)[1])
+      })
+    }
+  },
+  mounted() {
+    this.importAll(
+      require.context('../../static/jotted-topics/', true, /\.md$/)
+    )
   }
 }
 </script>

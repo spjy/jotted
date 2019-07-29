@@ -7,14 +7,20 @@ import mdHighlight from 'markdown-it-highlight'
 import mdFrontMatter from 'markdown-it-front-matter'
 import mdTableOfContentsAndAnchor from 'markdown-it-toc-and-anchor'
 
+/**
+ * Function to process markdown files.
+ * @param {*} markdown The markdown file to process
+ */
 function markdownIt(markdown) {
   const output = {
     frontmatter: {},
     toc: {}
   }
 
-  mdAttributes.use(katex)
+  // Integrate KaTeX into markdown it plugin
+  mdTexMath.use(katex)
 
+  // Load plugins into markdown it
   const markdownIt = mdIt()
     .use(mdAttributes)
     .use(mdTexMath, {
@@ -23,6 +29,7 @@ function markdownIt(markdown) {
     })
     .use(mdHighlight)
     .use(mdFrontMatter, fm => {
+      // Extract frontmatter variables from markdown file
       fm.split('\n').forEach(kv => {
         const value = kv.split(': ')
 
@@ -30,6 +37,7 @@ function markdownIt(markdown) {
       })
     })
     .use(mdTableOfContentsAndAnchor, {
+      // Extract headers and insert into table of contents key
       tocCallback: (markdown, array, html) => {
         output.toc = array
         // eslint-disable-next-line
@@ -37,6 +45,7 @@ function markdownIt(markdown) {
       }
     })
 
+  // Get output from markdown it renderer
   output.output = markdownIt.render(markdown)
 
   return output
