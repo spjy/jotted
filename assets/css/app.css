@@ -1,3 +1,7 @@
 .off-card {
   background-color: #303030;
 }
+
+p {
+  margin: 0.1em;
+}
