@@ -4729,6 +4729,11 @@ highlight.js@^9.12.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.8.tgz#f344fda123f36f1a65490e932cf90569e4999971"
   integrity sha512-RrapkKQWwE+wKdF73VsOa2RQdIoO3mxwJ4P8mhbI6KYJUraUHRKM5w5zQQKXNk0xNL4UVRdulV9SBJcmzJNzVA==
 
+highlight.js@^9.15.9:
+  version "9.15.9"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.9.tgz#865257da1dbb4a58c4552d46c4b3854f77f0e6d5"
+  integrity sha512-M0zZvfLr5p0keDMCAhNBp03XJbKBxUx5AfyfufMdFMEP4N/Xj6dh0IqC75ys7BAzceR34NgcvXjupRVaHBPPVQ==
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -6288,6 +6293,11 @@ markdown-it-attrs@^2.4.1:
   resolved "https://registry.yarnpkg.com/markdown-it-attrs/-/markdown-it-attrs-2.4.1.tgz#4868d067b0615568afc027bb99dfa2badb7ca1bc"
   integrity sha512-BASnIYS+JLpjlhDf7jLV8VOuccxjfDDnQcz5dLfgPsYw8OsgbASexADdIkF7tIdGn+jaQSA4qOZXM3v3W3JBCg==
 
+markdown-it-div@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-div/-/markdown-it-div-1.1.0.tgz#779c07a2313a36e59afd54c39907f9bc87c1ab20"
+  integrity sha512-Vz1T8cPG4sRofn5VlwiGMpy7AyhizbBZcFmvVDf/mlDgF7Mt6QqjPhc/nLlLYB3EANkJfO4kym7R6SZ7RhGvCQ==
+
 markdown-it-front-matter@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/markdown-it-front-matter/-/markdown-it-front-matter-0.1.2.tgz#e50bf56e77e6a4f5ac4ffa894d4d45ccd9896b20"
@@ -6306,6 +6316,13 @@ markdown-it-katex@^2.0.3:
   integrity sha1-17hqGuoLnWSW+rTnkZoY/e9YnDk=
   dependencies:
     katex "^0.6.0"
+
+markdown-it-loader@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-loader/-/markdown-it-loader-0.7.0.tgz#2827a05323df5dbcdfd24c46d834da212d404c8e"
+  integrity sha512-PkNIDEYgaNx/In9GJRsxPbO+9zdCJNVPRBdp394oLSW9GdegYrskbQjh1KfHDc1Ti/COqC+4p+jZBs+5qG+cvg==
+  dependencies:
+    loader-utils "^1.1.0"
 
 markdown-it-table-of-contents@^0.4.4:
   version "0.4.4"

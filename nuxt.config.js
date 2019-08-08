@@ -54,18 +54,18 @@ export default {
      */
     extend(config, ctx) {
       // Run ESLint on save
+      config.module.rules.push({
+        test: /\.md$/,
+        exclude: /(node_modules)/,
+        use: 'raw-loader'
+      })
+
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
-
-        config.module.rules.push({
-          test: /\.md$/,
-          exclude: /(node_modules)/,
-          use: 'raw-loader'
         })
       }
     }
