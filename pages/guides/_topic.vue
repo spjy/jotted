@@ -14,6 +14,7 @@
           >
             <a-anchor-link
               v-for="content in toc"
+              :class="content.level === 1 ? 'font-semibold' : ''"
               :href="`#${content.anchor}`"
               :key="content.anchor"
               :title="content.content"
