@@ -124,7 +124,7 @@ ul li {
   padding-left: 1.7em;
 }
 
-ul li:before {
+ul:not(.ant-menu) li:before {
   content: "–";
   color: #a5a5a5;
   padding-right: 5px;
