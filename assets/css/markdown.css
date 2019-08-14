@@ -113,3 +113,23 @@ p a:hover {
 code {
   color: rgba(0, 0, 0, 0.45);
 }
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul li {
+  padding-left: 1.7em;
+}
+
+ul li:before {
+  content: "–";
+  color: #a5a5a5;
+  padding-right: 5px;
+}
+
+ol li:before {
+  color: #a5a5a5;
+}
