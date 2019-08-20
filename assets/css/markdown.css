@@ -101,13 +101,13 @@ th, td {
 }
 
 p a {
-  color: #8cc3ff;
-  border-bottom: #8cc3ff 1px dashed;
+  color: #69b1ff;
+  border-bottom: #69b1ff 1px dashed;
   transition: color .3s, border-bottom .3s
 }
 
 p a:hover {
-  border-bottom: #40a9ff 1px dashed;
+  border-bottom: #0783e7 1px dashed;
 }
 
 code {
