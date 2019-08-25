@@ -1,20 +1,28 @@
 h1 {
   padding-top: 0.5em;
-  border-bottom: 1px solid #dbd8e9;
+  border-bottom: 1px solid;
+  border-image-source: linear-gradient(90deg, rgba(219,216,233,1) 0%, rgba(255,255,255,1) 100%);
+  border-image-slice: 1;
 }
 
 h2 {
   padding-top: 1em;
-  border-bottom: 1px solid #dbd8e9;
+  border-bottom: 1px solid;
+  border-image-source: linear-gradient(90deg, rgba(219,216,233,1) 0%, rgba(255,255,255,1) 100%);
+  border-image-slice: 1;
 }
 
 h3 {
   padding-top: 0.75em;
-  border-bottom: 1px solid #dbd8e9;
 }
 
 h4 {
   padding-top: 0.5em;
+}
+
+h5 {
+  padding-top: 0.5em;
+  font-size: 0.9em;
 }
 
 section {
