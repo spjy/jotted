@@ -134,11 +134,16 @@ ul li {
 }
 
 ul:not(.ant-menu) li:before {
-  content: "–";
+  content: "ー";
   color: #a5a5a5;
   padding-right: 5px;
 }
 
 ol li:before {
   color: #a5a5a5;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: #ff6969 1px dashed;
 }

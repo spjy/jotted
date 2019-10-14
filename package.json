@@ -30,6 +30,7 @@
     "markdown-it-table-of-contents": "^0.4.4",
     "markdown-it-texmath": "^0.5.5",
     "markdown-it-toc-and-anchor": "^4.2.0",
+    "markdown-it-underline": "^1.0.1",
     "nuxt": "^2.4.0"
   },
   "devDependencies": {

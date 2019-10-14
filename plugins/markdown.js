@@ -6,6 +6,7 @@ import mdTexMath from 'markdown-it-texmath'
 import mdHighlight from 'markdown-it-highlight'
 import mdFrontMatter from 'markdown-it-front-matter'
 import mdTableOfContentsAndAnchor from 'markdown-it-toc-and-anchor'
+import mdUnderline from 'markdown-it-underline'
 import mdDiv from 'markdown-it-div'
 
 /**
@@ -46,6 +47,7 @@ function markdownIt(markdown) {
       }
     })
     .use(mdDiv)
+    .use(mdUnderline)
 
   // Get output from markdown it renderer
   output.output = markdownIt.render(markdown)
