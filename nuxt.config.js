@@ -1,3 +1,4 @@
+import fs from 'fs'
 import pkg from './package'
 
 export default {
@@ -43,6 +44,29 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  generate: {
+    routes() {
+      return new Promise((resolve, reject) => {
+        fs.readdir('./static/jotted-topics/', (err, files) => {
+          const routes = []
+
+          if (err) {
+            reject(err)
+          } else {
+            files.forEach(file => {
+              const filename = file.split('.')
+              if (filename[1] === 'md') {
+                routes.push(`/guides/${filename[0]}`)
+              }
+            })
+
+            resolve(routes)
+          }
+        })
+      })
+    }
   },
 
   /*
